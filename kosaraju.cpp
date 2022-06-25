@@ -36,5 +36,11 @@ int main()
       dfs_time(vstd,a,adj,s);
     }
   }
+  while(!s.empty())
+  {
+    int vrtx=s.top();
+    s.pop();
+    cout<<vrtx<<" ";
+  }
   return 0;
 }
