@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void dfs_time(int vstd[],int a,vector<int> adj[],s)
+void dfs_time(int vstd[],int a,vector<int> adj[],stack<int> s)
 {
   if(vstd[a]==0)
   {
@@ -9,7 +9,7 @@ void dfs_time(int vstd[],int a,vector<int> adj[],s)
     cout<<a<<" ";
     for(int vrtx:adj[a])
     {
-      dfs(vstd,vrtx,adj,s);
+      dfs_time(vstd,vrtx,adj,s);
     }
     s.push(a);
   }
@@ -19,7 +19,6 @@ int main()
 {
   int n_v,n_e;
   cin>>n_v>>n_e;
-  cin>>s;
   vector<int> adj[n_v];
    for(int a=0;a<n_e;a++)
   {
